@@ -1,0 +1,23 @@
+.rodape{
+    background-color: var(--verde-escuro);
+    padding: 1rem 0;
+}
+
+.rodape_caixa{
+    padding: 0 8rem;
+}
+
+.rodape a{
+    color: var(--branco);
+}
+
+.rodape_info>ul, .rodape_caixa, .rodape_redes ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+}
+
+.rodape_info_item li{
+    padding: .5rem 0;
+}

@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import "./reset.css";
+import "./base.css";
+import { Cabecalho } from "./cabecalho/cabecalho";
+import { Route, Routes, useLocation } from "react-router-dom";
+import { Index } from "./index/index";
+import { Rodape } from "./rodape/rodape";
+import { Cadastro } from "./cadastro/cadastro";
+import { Login } from "./login/login";
+import { useState } from "react";
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Cabecalho />
+      <Routes>
+        <Route element={<Index />} exact path="/"></Route>
+        <Route element={<Cadastro />} exact path="/cadastro"></Route>
+        <Route element={<Login />} exact path="/login"></Route>
+      </Routes>
+      { useLocation().pathname == "/" 
+      ? 
+      <Rodape />
+      :
+      ""
+      }
+    </>
   );
 }
 

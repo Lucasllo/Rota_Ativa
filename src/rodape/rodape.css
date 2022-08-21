@@ -21,3 +21,11 @@
 .rodape_info_item li{
     padding: .5rem 0;
 }
+
+@media screen and (max-width:  768px) {
+    .rodape_caixa{
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+}

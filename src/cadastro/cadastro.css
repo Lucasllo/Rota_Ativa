@@ -20,21 +20,6 @@
     margin-bottom: .5rem;
 }
 
-.cadastro_formulario_caixa {
-    margin: .5rem 0;
-    border: 1px solid var(--cinza);
-    border-radius: 20px;
-    padding: 1rem;
-}
-
-.cadastro_formulario_caixa input{
-    border: none;
-    outline: none;
-    width: 100%;
-    height: 15px;
-    font-size: 1.1rem;
-}
-
 .cadastro_formulario_enviar{
     text-align: right;
 }
@@ -54,3 +39,15 @@
     padding-left: 1rem;
 }
 
+
+@media screen and (max-width:  768px) {
+    .cadastro_formulario>div{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:  500px) {
+    .cadastro_caixa{
+        padding: 0;
+    }
+}

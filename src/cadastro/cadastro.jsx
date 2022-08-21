@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import CaixaFormulario from '../components/caixaFormulario/caixaFormulario';
+import CaixaFormularioLogin from '../components/caixaFormularioLogin/caixaFormularioLogin';
 import './cadastro.css';
 import { infoBasic } from "../dados/dadosFormulario";
 import { Link } from 'react-router-dom';
@@ -38,7 +38,7 @@ export function Cadastro() {
                 <form className='cadastro_formulario'>
                     {infoBasic().map(item => {
                         return (
-                            <CaixaFormulario
+                            <CaixaFormularioLogin
                                 key={item.position}
                                 name={item.name}
                                 id={item.id}
@@ -49,6 +49,7 @@ export function Cadastro() {
                                 label={item.label}
                                 campo={dados[item.position].campo}
                                 evento={v => dados[item.position].evento(v)}
+                                img={item.img}
                             />
                         )
                     })}
@@ -60,7 +61,6 @@ export function Cadastro() {
                             value="Cadastrar"
                         />
                     </div>
-                    <br />
                     {/* <div className="login_formulario_info">
                         <p>
                             <span>

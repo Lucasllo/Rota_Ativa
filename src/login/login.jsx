@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import CaixaFormulario from '../components/caixaFormulario/caixaFormulario';
+import CaixaFormularioLogin from '../components/caixaFormularioLogin/caixaFormularioLogin';
 import './login.css';
 import { log } from "../dados/dadosFormulario";
 import { Link } from 'react-router-dom';
@@ -28,7 +28,7 @@ export function Login() {
                 <form className='login_formulario'>
                     {log().map(item => {
                         return (
-                            <CaixaFormulario
+                            <CaixaFormularioLogin
                                 key={item.position}
                                 name={item.name}
                                 id={item.id}
@@ -39,6 +39,7 @@ export function Login() {
                                 label={item.label}
                                 campo={dados[item.position].campo}
                                 evento={v => dados[item.position].evento(v)}
+                                img={item.img}
                             />
                         )
                     })}

@@ -6,8 +6,9 @@ const inforBasica = [
     placeholder:" ",
     required:true,
     label: "Nome",
-    class:"cadastro_formulario_caixa",
-    position: 0
+    class:"formulario_caixa",
+    position: 0,
+    img:"/img/perfil.png"
 },{
     name: "email",
     id:"email",
@@ -15,8 +16,9 @@ const inforBasica = [
     placeholder:" ",
     required:true,
     label: "E-mail",
-    class:"cadastro_formulario_caixa",
-    position: 1
+    class:"formulario_caixa",
+    position: 1,
+    img:"/img/email.png"
 },{
     name: "senha",
     id:"senha",
@@ -24,8 +26,9 @@ const inforBasica = [
     placeholder:" ",
     required:true,
     label: "Senha",
-    class:"cadastro_formulario_caixa",
-    position: 2
+    class:"formulario_caixa",
+    position: 2,
+    img:"/img/senha.png"
 },{
     name: "confirmaSenha",
     id:"confirmaSenha",
@@ -33,8 +36,9 @@ const inforBasica = [
     placeholder:" ",
     required:true,
     label: "Confirmar Senha",
-    class:"cadastro_formulario_caixa",
-    position: 3
+    class:"formulario_caixa",
+    position: 3,
+    img:"/img/senha.png"
 }
 ]
 
@@ -45,8 +49,9 @@ const login = [{
     placeholder:" ",
     required:true,
     label: "E-mail",
-    class:"login_formulario_caixa",
-    position: 0
+    class:"formulario_caixa",
+    position: 0,
+    img:"/img/email.png"
 },{
     name: "Senha",
     id:"Senha",
@@ -54,8 +59,9 @@ const login = [{
     placeholder:" ",
     required:true,
     label: "Senha",
-    class:"login_formulario_caixa",
-    position: 1
+    class:"formulario_caixa",
+    position: 1,
+    img:"/img/senha.png"
 }]
 
 export function infoBasic(){

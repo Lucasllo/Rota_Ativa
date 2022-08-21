@@ -2,7 +2,6 @@
     background-image: url("/public/img/background.png");
     background-size: cover;
     background-position: 0% 30%; 
-    height: 100vh;
 }
 
 .principal_caixa{
@@ -22,4 +21,24 @@
 
 .principal_texto span, .principal_texto h2{
     color: var(--branco);
+}
+
+@media screen and (max-width:  768px) {
+    .principal{
+        background-size: initial;
+        height: initial;
+    }
+
+    .principal_caixa{
+        padding: 1rem 0;
+    }
+
+    .principal_texto h2{
+        width: 100%;
+    }
+
+    .principal_caixa img{
+        width: 100%;
+    }
+    
 }

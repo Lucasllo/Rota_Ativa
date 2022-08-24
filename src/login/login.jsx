@@ -3,8 +3,18 @@ import CaixaFormularioLogin from '../components/caixaFormularioLogin/caixaFormul
 import './login.css';
 import { log } from "../dados/dadosFormulario";
 import { Link } from 'react-router-dom';
+import UsersService from '../service/users';
 
 export function Login() {
+
+    const userService = new UsersService();
+    
+    function logar(e) {
+        e.preventDefault();
+        userService.getUser().then((resp) => {
+            console.log(resp);
+        })
+    }
 
     const [email, setEmail] = useState();
     const [senha, setSenha] = useState();
@@ -25,7 +35,7 @@ export function Login() {
             <div className='container login_caixa'>
                 <h3>Inicie sua sessão</h3>
 
-                <form className='login_formulario'>
+                <form onSubmit={logar}  className='login_formulario'>
                     {log().map(item => {
                         return (
                             <CaixaFormularioLogin

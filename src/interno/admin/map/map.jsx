@@ -12,7 +12,7 @@ const center = { lat: -3.735015, lng: -38.494695 };
 
 export function Map() {
     const { isLoaded } = useJsApiLoader({
-        googleMapsApiKey: "AIzaSyAQYGeShstIRAbsrS4lwyumbLwlG5t-sTA",
+        googleMapsApiKey: "AIzaSyAQYGeLlllShstIRAbsrS4lwyumbLwlG5t-sTA",
         libraries: ["places"],
     });
 

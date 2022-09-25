@@ -1,25 +1,21 @@
 import { useState } from 'react';
-import CaixaFormularioLogin from '../components/caixaFormularioLogin/caixaFormularioLogin';
-import './login.css';
-import { log } from "../dados/dadosFormulario";
+import './cadastro.css';
 import { Link } from 'react-router-dom';
-import UsersService from '../service/users';
+import { infoBasic } from '../../dados/dadosFormulario';
+import CaixaFormularioLogin from '../../components/caixaFormularioLogin/caixaFormularioLogin';
 
-export function Login() {
+export function Cadastro() {
 
-    const userService = new UsersService();
-    
-    function logar(e) {
-        e.preventDefault();
-        userService.getUser().then((resp) => {
-            console.log(resp);
-        })
-    }
-
+    const [nome, setNome] = useState();
     const [email, setEmail] = useState();
     const [senha, setSenha] = useState();
+    const [confirmaSenha, setConfirmaSenha] = useState();
 
     const dados = [
+        {
+            campo: nome,
+            evento: setNome
+        },
         {
             campo: email,
             evento: setEmail
@@ -27,16 +23,20 @@ export function Login() {
         {
             campo: senha,
             evento: setSenha
+        },
+        {
+            campo: confirmaSenha,
+            evento: setConfirmaSenha
         }
     ]
 
     return (
-        <section className='login'>
-            <div className='container login_caixa'>
-                <h3>Inicie sua sessão</h3>
+        <section className='cadastro'>
+            <div className='container cadastro_caixa'>
+                <h3>Seja bem-vindo(a) ao Rota Ativa!</h3>
 
-                <form onSubmit={logar}  className='login_formulario'>
-                    {log().map(item => {
+                <form className='cadastro_formulario'>
+                    {infoBasic().map(item => {
                         return (
                             <CaixaFormularioLogin
                                 key={item.position}
@@ -54,28 +54,21 @@ export function Login() {
                         )
                     })}
 
-                    <div className="login_formulario_enviar">
-                        <Link to="/recuperarSenha">
-                            <span>
-                                Esqueceu a senha?
-                            </span>
-                        </Link>
+                    <div className="cadastro_formulario_enviar">
                         <input
-                            className="login_formulario_botao"
+                            className="cadastro_formulario_botao"
                             type="submit"
-                            value="Logar"
+                            value="Cadastrar"
                         />
                     </div>
-                    <br />
-                    <div className="login_formulario_info">
+                    {/* <div className="login_formulario_info">
                         <p>
                             <span>
-                                Não tem cadastro? 
+                                Ao continuar com o acesso, você concorda com a nossa
                             </span>
-                            <Link to="/cadastro">Cadastre-se</Link>
+                            <Link to="#"> política de privacidade</Link>
                         </p>
-                    </div>
-
+                    </div> */}
                 </form>
             </div>
         </section>

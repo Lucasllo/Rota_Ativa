@@ -1,0 +1,23 @@
+.relatorios{
+    padding: 1.75rem;
+}
+
+.teste{
+    width:50%; height:50%;
+}
+
+.tabela{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.tabela_headItem{
+    color: var(--verde-escuro);
+    font-weight: 500;
+    border-bottom: 1px solid var(--bege);
+}
+
+.tabela_bodyItem{
+    color: var(--verde-escuro);
+}
